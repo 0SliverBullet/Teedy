@@ -2432,6 +2432,7 @@ java.lang.NullPointerException: Cannot invoke "jakarta.persistence.EntityManager
 10 May 2025 22:20:01,971 INFO com.sismics.docs.core.service.FileSizeService.lambda$runOneIteration$0(FileSizeService.java:50) No more file to process, stopping the service 
 10 May 2025 22:20:01,977 INFO com.sismics.docs.core.service.FileSizeService.shutDown(FileSizeService.java:35) File size service shutting down 
 10 May 2025 22:20:55,612 INFO com.sismics.util.ClasspathScanner.findClasses(ClasspathScanner.java:48) Found 2 classes for AuthenticationHandler 
+<<<<<<< HEAD
 10 May 2025 22:29:47,006 INFO com.sismics.docs.core.service.InboxService.shutDown(InboxService.java:57) Inbox service shutting down 
 10 May 2025 22:29:47,007 INFO com.sismics.docs.core.service.FileService.shutDown(FileService.java:44) File service shutting down 
 10 May 2025 22:29:54,675 INFO com.sismics.util.jpa.EMF.getEntityManagerProperties(EMF.java:67) Configuring EntityManager from hibernate.properties 
@@ -2449,3 +2450,5 @@ java.lang.NullPointerException: Cannot invoke "jakarta.persistence.EntityManager
 10 May 2025 22:29:58,875 INFO com.sismics.docs.core.service.FileSizeService.shutDown(FileSizeService.java:35) File size service shutting down 
 10 May 2025 22:32:26,053 INFO com.sismics.docs.core.service.InboxService.shutDown(InboxService.java:57) Inbox service shutting down 
 10 May 2025 22:32:26,053 INFO com.sismics.docs.core.service.FileService.shutDown(FileService.java:44) File service shutting down 
+=======
+>>>>>>> 71f47a277cce09fd4f281d048abe61a13349705f
