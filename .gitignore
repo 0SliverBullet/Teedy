@@ -20,7 +20,12 @@ docs/*
 #macos
 .DS_Store
 
-/.vscode
-/target
-/data
+.vscode
+data
+data/docs/log/docs.log
+
+target
+
+$HOME
+
 
