@@ -417,6 +417,25 @@ angular.module('docs',
           controller: 'GroupProfile'
         }
       }
+    })
+    .state('register', {
+      url: '/register',
+      abstract: true,
+      views: {
+        'page': {
+          templateUrl: 'partial/docs/usergroup.html',
+          controller: 'UserGroup'
+        }
+      }
+    })
+    .state('register.RegisterList', {
+      url: '/list',
+      views: {
+        'sub': {
+          templateUrl: 'partial/docs/register.list.html',
+          controller: 'RegisterList'
+        }
+      }
     });
 
   // Configuring Restangular

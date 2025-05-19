@@ -225,6 +225,38 @@
       "edit_user": "编辑 {{ username }} 用户"
     }
   },
+  "register": {
+    "requset_signup": "请求注册",
+    "register_title": "注册新用户",
+    "new_username": "用户名",
+    "new_username_prompt": "输入用户名",
+    "new_password": "密码",
+    "new_password_prompt": "输入密码",
+    "admin": {
+      "menu_title": "新用户请求管理",
+      "signup_request": "新用户请求",
+      "all_signup_request": "所有新用户请求"
+    },
+
+    "list": {
+      "title": "新用户列表",
+      "username": "用户名",
+      "status": "状态",
+      "create_date": "创建日期",
+      "actions": "操作",
+      "accepted": "通过",
+      "rejected": "拒绝",
+      "approve": "通过",
+      "reject": "拒绝",
+      "pending": "等待",
+      "all": "所有",
+      "notification": ""
+    },
+    "status": {
+      "success": "成功",
+      "failed": "失败"
+    }
+  },
   "usergroup": {
     "search_groups": "搜索群组",
     "search_users": "搜索用户",
@@ -232,6 +264,11 @@
     "default": {
       "title": "用户 & 群组",
       "message": "此处您可以浏览用户和群组信息."
+    },
+    "register": {
+      "fillAllBlank": "请填写所有必填项",
+      "failed": "请求发送失败，请重新尝试",
+      "success": "请求发送成功，请等待审核"
     }
   },
   "settings": {

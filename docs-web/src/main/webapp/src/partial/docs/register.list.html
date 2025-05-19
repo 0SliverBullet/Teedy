@@ -1,0 +1,62 @@
+<div>
+
+  <!-- 简单提示框 -->
+  <div ng-if="tmessage.isShow" class="simple-toast">
+    <span>{{ tmessage.status === 'success' ? '✅' : '❌' }} {{ tmessage.message }}</span>
+    <button ng-click="tmessage.isShow = false">x</button>
+  </div>
+
+  <h2>{{ 'register.list.title' | translate }}</h2>
+
+  <!-- 筛选按钮 -->
+  <div>
+    <button ng-click="filterByStatus('all')">{{ 'register.list.all' | translate }}</button>
+    <button ng-click="filterByStatus('accepted')">{{ 'register.list.accepted' | translate }}</button>
+    <button ng-click="filterByStatus('rejected')">{{ 'register.list.rejected' | translate }}</button>
+    <button ng-click="filterByStatus('pending')">{{ 'register.list.pending' | translate }}</button>
+  </div>
+
+  <!-- 简单表格 -->
+  <table border-collapse="1" cellspacing="0" cellpadding="6" style="width: 100%; margin-top: 20px;">
+    <thead>
+      <tr>
+        <th>
+          {{ 'register.list.username' | translate }}
+          <button ng-click="sortData('username')">↑↓</button>
+        </th>
+        <th>
+          {{ 'register.list.status' | translate }}
+          <button ng-click="sortData('status')">↑↓</button>
+        </th>
+        <th>
+          {{ 'register.list.create_date' | translate }}
+          <button ng-click="sortData('create_date')">↑↓</button>
+        </th>
+        <th>{{ 'register.list.actions' | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in filtered_list | orderBy:sortColumn:reverseSort">
+        <td>{{ item.username }}</td>
+        <td>
+          <span ng-if="item.accept_date !== 'null'">{{ 'register.list.accepted' | translate }}</span>
+          <span ng-if="item.reject_date !== 'null'">{{ 'register.list.rejected' | translate }}</span>
+          <span ng-if="item.accept_date === 'null' && item.reject_date === 'null'">{{ 'register.list.pending' | translate }}</span>
+        </td>
+        <td>{{ item.create_date | date:'yyyy-MM-dd HH:mm' }}</td>
+        <td>
+          <button ng-click="approve(item)" ng-if="item.accept_date === 'null' && item.reject_date === 'null'">
+            {{ 'register.list.approve' | translate }}
+          </button>
+          <button ng-click="reject(item)" ng-if="item.accept_date === 'null' && item.reject_date === 'null'">
+            {{ 'register.list.reject' | translate }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div ng-if="!filtered_list || filtered_list.length === 0" style="margin-top: 10px;">
+    {{ 'register.list.no_requests' | translate }}
+  </div>
+</div>

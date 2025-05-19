@@ -45,6 +45,47 @@
         <span class="fas fa-user"></span>
       </div>
     </div>
+
+    <div ng-if="userInfo.base_functions.indexOf('ADMIN') == -1">
+      <!-- user -->
+      <div ng-if="tmessage.isShow" class="simple-toast">
+        <span>{{ tmessage.status === 'success' ? '✅' : '❌' }} {{ tmessage.message }}</span>
+        <button ng-click="tmessage.isShow = false">x</button>
+      </div>
+    
+      <h2>{{ 'register.list.title' | translate }}</h2>
+    
+      <form name="registerForm">
+        <label>{{ 'register.register_title' | translate }}</label>
+    
+        <div>
+          <label for="newUsername">{{ 'register.new_username' | translate }}</label>
+          <input type="text" id="newUsername" name="newUsername" ng-model="newUser.username"
+                 ng-pattern="/^[a-zA-Z0-9_@.-]*$/"
+                 ng-minlength="4" ng-maxlength="10"
+                 placeholder="{{ 'register.new_username_prompt' | translate }}">
+        </div>
+    
+        <div>
+          <label for="newPassword">{{ 'register.new_password' | translate }}</label>
+          <input type="password" id="newPassword" name="newPassword" ng-model="newUser.password"
+                 placeholder="{{ 'register.new_password_prompt' | translate }}">
+        </div>
+    
+        <button ng-click="requestSignup(newUser)">
+          {{ 'register.requset_signup' | translate }}
+        </button>
+      </form>
+    </div>
+    
+    <div ng-if="userInfo.base_functions.indexOf('ADMIN') != -1">
+      <!-- admin -->
+      <h3>{{ 'register.admin.menu_title' | translate }}</h3>
+      <ul>
+        <li><a href="#/register/list">{{ 'register.admin.all_signup_request' | translate }}</a></li>
+      </ul>
+    </div>
+
   </div>
 
   <div class="col-md-8">
