@@ -203,6 +203,20 @@ public class UserDao {
     }
 
     /**
+     * Checks if a user exists by username or email.
+     *
+     * @param username Username to check
+     * @return {@code true} if a user with the given username or email exists, {@code false} otherwise
+     */
+    public boolean findUser(String username) {
+        EntityManager em = ThreadLocalContext.get().getEntityManager();
+        Query q = em.createQuery("select u from User u where u.username = :username");
+        q.setParameter("username", username);
+
+        return !q.getResultList().isEmpty();
+    }
+
+    /**
      * Gets a user by its ID.
      * 
      * @param id User ID
