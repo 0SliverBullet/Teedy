@@ -138,7 +138,7 @@ pipeline {
     agent any
         environment {
             DEPLOYMENT_NAME = "hello-node"
-            CONTAINER_NAME = "hello-node-5dbc555957-5wngx"
+            CONTAINER_NAME = "teedy"
             IMAGE_NAME = "zubinzheng/teedy:latest"
         }
         stages {
